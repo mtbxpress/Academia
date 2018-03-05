@@ -1,16 +1,20 @@
-	<!-- SideBar -->
+<%@page language="java" contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
+<!-- SideBar -->
 	<section class="full-box cover dashboard-sideBar">
 		<div class="full-box dashboard-sideBar-bg btn-menu-dashboard"></div>
 		<div class="full-box dashboard-sideBar-ct">
 			<!--SideBar Title -->
 			<div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title">
-				company <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+				ACADEMIA JJDELROM <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
 			</div>
 			<!-- SideBar User info -->
 			<div class="full-box dashboard-sideBar-UserInfo">
 				<figure class="full-box">
-					<img src="plantilla/assets/img/avatar.jpg" alt="UserIcon">
-					<figcaption class="text-center text-titles">User Name</figcaption>
+					<img id="icono_avatar" src="" alt="UserIcon">
+					<figcaption class="text-center text-titles">
+                                          <%= session.getAttribute("nombre_usuario")%>
+                                        </figcaption>
 				</figure>
 				<ul class="full-box list-unstyled text-center">
 					<li>
@@ -32,26 +36,28 @@
 						<i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Dashboard
 					</a>
 				</li>
-				<li>
+                                <% if(session.getAttribute("id_rol").equals(1)){%>  
+				<li>                                    
 					<a href="#!" class="btn-sideBar-SubMenu">
-						<i class="zmdi zmdi-case zmdi-hc-fw"></i> Administration <i class="zmdi zmdi-caret-down pull-right"></i>
+						<i class="zmdi zmdi-case zmdi-hc-fw"></i> Administracion <i class="zmdi zmdi-caret-down pull-right"></i>
 					</a>
 					<ul class="list-unstyled full-box">
-						<li>
-							<a href="period.html"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> Period</a>
+						<li><!-- vistas/admin/estadisticas.jsp    --> <%-- <s:url action='redirectAdmin'/> --%>
+							<a href="/Academia/vistas/admin/estadisticas.jsp"><i class="zmdi zmdi-font zmdi-hc-fw"></i> Estadisticas</a>
 						</li>
 						<li>
-							<a href="subject.html"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Subject</a>
+							<a href="/Academia/vistas/admin/asignaturas.jsp"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Asignaturas</a>
 						</li>
 						<li>
 							<a href="section.html"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i> Section</a>
 						</li>
 						<li>
-							<a href="salon.html"><i class="zmdi zmdi-font zmdi-hc-fw"></i> Salon</a>
+							<a href="period.html"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> Period</a>
 						</li>
 					</ul>
 				</li>
-				<li>
+                                <% } %>
+			<!--	<li>
 					<a href="#!" class="btn-sideBar-SubMenu">
 						<i class="zmdi zmdi-account-add zmdi-hc-fw"></i> Users <i class="zmdi zmdi-caret-down pull-right"></i>
 					</a>
@@ -92,7 +98,7 @@
 							<a href="school.html"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> School Data</a>
 						</li>
 					</ul>
-				</li>
+				</li>-->
 			</ul>
 		</div>
 	</section>

@@ -1,2 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/Academia"/>
+<Context antiJARLocking="true" path="/Academia">
+  <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" name="jdbc/academia" password="root" type="javax.sql.DataSource" url="jdbc:mysql://localhost/academia" username="root">
+  </Resource>
+</Context>

@@ -40,7 +40,7 @@ public class GestionarProfesor {
         //    Date currentDate = new Date();
        //     currentDate.getTime() / 1000;
 
-System.out.println("#######################"+unixTime);
+//System.out.println("#######################"+unixTime);
       //      Statement statement = con.createStatement();
       //      String sq = "INSERT INTO profesor VALUES('11','11','11','11','11','11','11','11')";
       //      statement.executeUpdate(sq);   

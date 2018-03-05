@@ -4,21 +4,39 @@
 
 <struts>
     <package name="default" extends="struts-default">
-        
-        
-    <action name="nuevo_alumno" class="action.AlumnoAction" method="execute">
+    <interceptors>
+        <interceptor name="login" class="interceptores.InterceptorLogin" />
+    </interceptors>            
+    <!--         <interceptor-ref name="login" />  PARTE PRIVADA--> 
+    <action name="nuevo_usuario_alumno" class="action.UsuarioAction" method="registrar_alumno">
       <!--  <result name="registroCorrecto">vistas/registroCorrecto.jsp</result>-->
-        <result name="registroCorrecto">plantilla/admin.jsp</result>
-        <result name="registroFallido">vistas/registroFallido.jsp</result>
+        <result name="registroCorrecto">index.jsp</result>
+        <result name="registroFallido">index.jsp</result>
         <result name="input">index.jsp</result>                
-        <!--<result name="input">vistas/formularios/form_insertar_profesor.jsp</result>        -->
     </action> 
     
-           
-      <action name = "enviarEmail" class = "email.Email" method = "execute">
+    <action name="validar_usuario" class="manejoBD.PoolAction">
+        <result name="success">index.jsp</result>        
+        <result name="input">index.jsp</result>
+        <result name="error">index.jsp</result>        
+    </action>      
+      <action name = "recuperar_password" class = "action.RecuperarPassword" method = "execute">
+         <result name = "success">index.jsp</result>
+         <result name = "error">index.jsp</result>
+         <result name="input">index.jsp</result>
+      </action> 
+
+      
+                 
+    
+      
+          
+                  
+<!--      <action name = "enviarEmail" class = "email.Email" method = "execute">
          <result name = "success">vistas/registroCorrecto.jsp</result>
          <result name = "error">vistas/registroFallido.jsp</result>
-      </action>                         
+      </action>  
+      -->                       
     <!-- Si se produce un error de validacion en el formulario 
  en vez de devolver success se devuelve inputpor lo tanto habria que añadir 
 un nuevo result name ="input" 
@@ -26,4 +44,11 @@ El error es HTTP Status 404 - No result defined for action action.ProfesorAction
         
         
     </package>
+    <!--
+    <package name="example" namespace="/example" extends="struts-default">
+        <action name="HelloWorld" class="example.HelloWorld">
+            <result>/example/HelloWorld.jsp</result>
+        </action>
+    </package>    
+    -->
 </struts>

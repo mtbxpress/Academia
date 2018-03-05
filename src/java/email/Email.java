@@ -11,6 +11,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import com.opensymphony.xwork2.ActionSupport;
+import manejoBD.Log;
 
 public class Email /*extends ActionSupport*/ {
 
@@ -24,15 +25,15 @@ public class Email /*extends ActionSupport*/ {
    static {
       properties.put("mail.smtp.starttls.enable", "true");
       properties.put("mail.smtp.host", "smtp.gmail.com");
-      properties.put("mail.smtp.socketFactory.port", "587");
+      properties.put("mail.smtp.socketFactory.port", "465");//"465","587"
       properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
       properties.put("mail.smtp.auth", "true");
-      properties.put("mail.smtp.port", "587" );//"465"
+      properties.put("mail.smtp.port", "465" );//"465","587"
    }
    public Email(){}
    
    public String execute() {
-      String ret = SUCCESS;
+      String ret = "success";
       try {
            Session session = Session.getInstance(properties, 
        //  Session session = Session.getDefaultInstance(properties,  
@@ -53,7 +54,8 @@ public class Email /*extends ActionSupport*/ {
          message.setText(body);
          Transport.send(message);
       } catch(Exception e) {
-         ret = ERROR;
+         
+         ret = "error";
          e.printStackTrace();
       }
       return ret;

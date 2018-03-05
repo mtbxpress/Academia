@@ -39,6 +39,6 @@ public class GeneradorPassword {
    public static void main(String[] args) {
         
     String pass = GeneradorPassword.getPassword( GeneradorPassword.MINUSCULAS + GeneradorPassword.MAYUSCULAS + GeneradorPassword.ESPECIALES,10);
-    System.out.println(pass);
+ //   System.out.println(pass);
     }        
 }
