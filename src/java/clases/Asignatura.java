@@ -3,16 +3,32 @@ package clases;
 import java.io.Serializable;
 
 public class Asignatura implements Serializable{
-    private String is_asignatura;
+    private String id_asignatura;
     private String nombre_asignatura;
     private String cuatrimestre_asignatura;
+    private String descripcion_asignatura;
 
-    public String getIs_asignatura() {
-        return is_asignatura;
+    public String getDescripcion_asignatura() {
+        return descripcion_asignatura;
     }
 
-    public void setIs_asignatura(String is_asignatura) {
-        this.is_asignatura = is_asignatura;
+    public void setDescripcion_asignatura(String descripcion_asignatura) {
+        this.descripcion_asignatura = descripcion_asignatura;
+    }
+
+    public String getId_asignatura() {
+        return id_asignatura;
+    }
+
+    public Asignatura(String id_asignatura, String nombre_asignatura, String cuatrimestre_asignatura, String descripcion_asignatura) {
+        this.id_asignatura = id_asignatura;
+        this.nombre_asignatura = nombre_asignatura;
+        this.cuatrimestre_asignatura = cuatrimestre_asignatura;
+        this.descripcion_asignatura = descripcion_asignatura;
+    }
+
+    public void setId_asignatura(String id_asignatura) {
+        this.id_asignatura = id_asignatura;
     }
 
     public String getNombre_asignatura() {
@@ -31,8 +47,8 @@ public class Asignatura implements Serializable{
         this.cuatrimestre_asignatura = cuatrimestre_asignatura;
     }
 
-    public Asignatura(String is_asignatura, String nombre_asignatura, String cuatrimestre_asignatura) {
-        this.is_asignatura = is_asignatura;
+    public Asignatura(String id_asignatura, String nombre_asignatura, String cuatrimestre_asignatura) {
+        this.id_asignatura = id_asignatura;
         this.nombre_asignatura = nombre_asignatura;
         this.cuatrimestre_asignatura = cuatrimestre_asignatura;
     }

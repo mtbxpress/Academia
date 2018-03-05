@@ -43,10 +43,10 @@ public class GestionarUsuario extends HttpServlet {
         String fecha_registro = "", id_usuario = ""; 
         
         try{
-            String actionName = ActionContext.getContext().getName();           
+       //     String actionName = ActionContext.getContext().getName();           
             con = ConexionMysql.getConexion();
         //    String sql = "INSERT INTO usuarios VALUES(?,?,?,?,?,?,?,?,MD5(?),?)";
-            String sql = "INSERT INTO usuarios VALUES(?,?,?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO usuarios VALUES(?,?,?,?,?,?,?,?,?,?,?)";
             
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//new SimpleDateFormat("dd/MM/yyyy");
             fecha_registro = sdf.format(new Date());
@@ -64,7 +64,9 @@ public class GestionarUsuario extends HttpServlet {
             GeneradorPassword gp = new GeneradorPassword();
             String pass = gp.getPassword( GeneradorPassword.MINUSCULAS + GeneradorPassword.MAYUSCULAS + GeneradorPassword.ESPECIALES,10);                        
             pstm.setString(9, pass);
-            pstm.setBoolean(10, usuario.isMatriculado_usuario());//profesor.getMatriculado_profesor()              
+            pstm.setBoolean(10, usuario.isMatriculado_usuario());//profesor.getMatriculado_profesor()    
+            int numAvatar = (int) (Math.random() * 3) + 1;
+            pstm.setInt(11, numAvatar);
             res = pstm.executeUpdate();            
 
             long unixTime = System.currentTimeMillis() / 1000L;

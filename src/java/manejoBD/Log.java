@@ -27,7 +27,7 @@ public class Log {
 //       System.out.println ("Directorio actual: " + miDir.getCanonicalPath());
         try {
             String data = "";// = "LOG de operaciones en Academia JJDELROM\n"+"text";
-            File file = new File("/home/jjdelgado/Escritorio/academia_log.txt");
+            File file = new File("/home/jj/Escritorio/academia_log.txt");
             // Si el archivo no existe, se crea!
             if (!file.exists()) {
                 data = "LOG DE ACADEMIA JJDELROM\n################################################################################\n";

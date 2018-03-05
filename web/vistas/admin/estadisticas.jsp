@@ -23,7 +23,7 @@
 
       
 
-<%@ include file="/../../plantilla/sections/sidebar.jsp" %> 
+<%@ include file="../../plantilla/sections/sidebar.jsp" %> 
 	<!-- Content page-->
 	<section class="full-box dashboard-contentPage">
 		<!-- NavBar -->

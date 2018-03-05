@@ -11,10 +11,10 @@
 	<title>Asignaturas</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" href="plantilla/css/main.css">
+	<link rel="stylesheet" href="../../plantilla/css/main.css">
     </head>
 
-    <%@ include file="/../../plantilla/sections/sidebar.jsp" %>
+    <%@ include file="../../plantilla/sections/sidebar.jsp" %>
 
 	<!-- Contenido -->
 	<section class="full-box dashboard-contentPage">
@@ -47,54 +47,58 @@
 		<!-- Content page -->
 		<div class="container-fluid">
 			<div class="page-header">
-			  <h1 class="text-titles"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Users <small>Admin</small></h1>
+			  <h1 class="text-titles"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Asignaturas <small>Admin</small></h1>
 			</div>
-			<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse voluptas reiciendis tempora voluptatum eius porro ipsa quae voluptates officiis sapiente sunt dolorem, velit quos a qui nobis sed, dignissimos possimus!</p>
+                    <p class="lead">Desde este apartado, el administrador podr&aacute; crear nuevas asignaturas, ver todas las asignaturas disponibles en la academia y editarlas...</p>
 		</div>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-12">
 					<ul class="nav nav-tabs" style="margin-bottom: 15px;">
-					  	<li class="active"><a href="#new" data-toggle="tab">New</a></li>
-					  	<li><a href="#list" data-toggle="tab">List</a></li>
+					  	<li class="active"><a href="#new" data-toggle="tab">Nueva</a></li>
+					  	<li><a href="#list" data-toggle="tab">Listar</a></li>
 					</ul>
 					<div id="myTabContent" class="tab-content">
 						<div class="tab-pane fade active in" id="new">
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col-xs-12 col-md-10 col-md-offset-1">
-									    <form action="">
+                                                                            <s:fielderror />
+                                                                            <s:form action="nueva_asignatura" id="nueva_asignatura-form">
 									    	<div class="form-group label-floating">
-											  <label class="control-label">Name</label>
-											  <input class="form-control" type="text">
+											  <label class="control-label">Identificador</label>
+                                                                                          <input class="form-control" name="identificador" type="text">
 											</div>
 											<div class="form-group label-floating">
-											  <label class="control-label">Last Name</label>
-											  <input class="form-control" type="text">
+											  <label class="control-label">Nombre</label>
+                                                                                          <input class="form-control" name="nombre" type="text">
 											</div>
 											<div class="form-group label-floating">
-											  <label class="control-label">Address</label>
-											  <textarea class="form-control"></textarea>
+											  <label class="control-label">Cuatrimestre</label>
+                                                                                          <input class="form-control" name="cuatrimestre" type="text">
 											</div>
 											<div class="form-group label-floating">
-											  <label class="control-label">Email</label>
-											  <input class="form-control" type="text">
+                                                                                            <label class="control-label">Descripci&oacute;n</label>
+											  <input class="form-control" name="descripcion" type="text">
 											</div>
-											<div class="form-group label-floating">
+										<!--	<div class="form-group label-floating">
 											  <label class="control-label">Phone</label>
 											  <input class="form-control" type="text">
-											</div>
-											<div class="form-group">
+											</div>-->
+										<!--	<div class="form-group">
 										      <label class="control-label">Photo</label>
 										      <div>
 										        <input type="text" readonly="" class="form-control" placeholder="Browse...">
 										        <input type="file" >
 										      </div>
-										    </div>
+										    </div
+          <!-- ############################################################################################################  -->
+          
+          <!-- ############################################################################################################  -->
 										    <p class="text-center">
-										    	<button  class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> Save</button>
+										    	<button  class="btn btn-info btn-raised btn-sm"><i class="zmdi zmdi-floppy"></i> Guardar</button>
 										    </p>
-									    </form>
+                                                                                    </s:form>
 									</div>
 								</div>
 							</div>
@@ -105,13 +109,14 @@
 									<thead>
 										<tr>
 											<th class="text-center">#</th>
-											<th class="text-center">Name</th>
-											<th class="text-center">Last Name</th>
-											<th class="text-center">Address</th>
-											<th class="text-center">Email</th>
-											<th class="text-center">Phone</th>
-											<th class="text-center">Update</th>
-											<th class="text-center">Delete</th>
+											<th class="text-center">Identificador</th>
+											<th class="text-center">Nombre</th>
+											<th class="text-center">Cuatrimestre</th>
+                                                                                        <th class="text-center">Descripci&oacute;n</th>
+											<th class="text-center">Editar</th>
+                                                                                        <th class="text-center">Eliminar</th>
+										<!--	<th class="text-center">Update</th>
+											<th class="text-center">Delete</th>-->
 										</tr>
 									</thead>
 									<tbody>
@@ -121,7 +126,6 @@
 											<td>Alfaro</td>
 											<td>El Salvador</td>
 											<td>carlos@gmail.com</td>
-											<td>+50312345678</td>
 											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="zmdi zmdi-refresh"></i></a></td>
 											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a></td>
 										</tr>
@@ -129,9 +133,8 @@
 											<td>2</td>
 											<td>Alicia</td>
 											<td>Melendez</td>
-											<td>El Salvador</td>
-											<td>alicia@gmail.com</td>
-											<td>+50312345678</td>
+                                                                                        <td>Melendez</td>
+											<td>alicia@gmail.com</td> 
 											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="zmdi zmdi-refresh"></i></a></td>
 											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a></td>
 										</tr>
@@ -140,8 +143,7 @@
 											<td>Sarai</td>
 											<td>Lopez</td>
 											<td>El Salvador</td>
-											<td>sarai@gmail.com</td>
-											<td>+50312345678</td>
+                                                                                        <td>El Salvador</td>
 											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="zmdi zmdi-refresh"></i></a></td>
 											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a></td>
 										</tr>
@@ -149,9 +151,8 @@
 											<td>4</td>
 											<td>Alba</td>
 											<td>Bonilla</td>
-											<td>El Salvador</td>
-											<td>alba@gmail.com</td>
 											<td>+50312345678</td>
+                                                                                        <td>El Salvador</td>
 											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="zmdi zmdi-refresh"></i></a></td>
 											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a></td>
 										</tr>
@@ -173,9 +174,9 @@
 			</div>
 		</div>
 	</section> 
-<%@ include file="plantilla/sections/notificationArea.jsp" %>
-<%@ include file="plantilla/sections/dialogHelp.jsp" %>
-<%@ include file="plantilla/sections/script.jsp" %>
+<%@ include file="../../plantilla/sections/notificationArea.jsp" %>
+<%@ include file="../../plantilla/sections/dialogHelp.jsp" %>
+<%@ include file="../../plantilla/sections/scriptAdmin.jsp" %>
 <script>
     $(document).ready(function(){
         $("#icono_avatar").attr("src","plantilla/assets/img/avatar.jpg");

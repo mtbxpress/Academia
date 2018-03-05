@@ -25,7 +25,11 @@
          <result name = "error">index.jsp</result>
          <result name="input">index.jsp</result>
       </action> 
-
+      
+      <action name = "nueva_asignatura" class = "action.AsignaturaAction" method = "registrar_asignatura">
+         <result name = "registroCorrecto">asignaturas.jsp</result>
+         <result name="registroFallido">asignaturas.jsp</result>
+      </action> 
       
                  
     
